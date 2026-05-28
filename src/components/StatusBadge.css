@@ -1,0 +1,70 @@
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.status-accepted {
+  background: rgba(16, 185, 129, 0.15);
+  color: #059669;
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.status-rejected {
+  background: rgba(239, 68, 68, 0.15);
+  color: #dc2626;
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.status-in-progress {
+  background: rgba(245, 158, 11, 0.15);
+  color: #b45309;
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+.status-submitted {
+  background: rgba(139, 92, 246, 0.15);
+  color: #6d28d9;
+  border-color: rgba(139, 92, 246, 0.3);
+}
+
+.status-ghosted {
+  background: rgba(156, 163, 175, 0.15);
+  color: #4b5563;
+  border-color: rgba(156, 163, 175, 0.3);
+}
+
+@media (prefers-color-scheme: dark) {
+  .status-accepted {
+    background: rgba(16, 185, 129, 0.2);
+    color: #34d399;
+    border-color: rgba(16, 185, 129, 0.4);
+  }
+  .status-rejected {
+    background: rgba(239, 68, 68, 0.2);
+    color: #f87171;
+    border-color: rgba(239, 68, 68, 0.4);
+  }
+  .status-in-progress {
+    background: rgba(245, 158, 11, 0.2);
+    color: #fbbf24;
+    border-color: rgba(245, 158, 11, 0.4);
+  }
+  .status-submitted {
+    background: rgba(139, 92, 246, 0.2);
+    color: #c4b5fd;
+    border-color: rgba(139, 92, 246, 0.4);
+  }
+  .status-ghosted {
+    background: rgba(156, 163, 175, 0.2);
+    color: #d1d5db;
+    border-color: rgba(156, 163, 175, 0.4);
+  }
+}

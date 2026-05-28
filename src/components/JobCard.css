@@ -1,0 +1,242 @@
+.job-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: box-shadow 0.2s, transform 0.2s;
+  box-shadow: var(--shadow);
+}
+
+.job-card:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    rgba(0, 0, 0, 0.12) 0 15px 20px -5px,
+    rgba(0, 0, 0, 0.08) 0 6px 8px -4px;
+}
+
+.card-main {
+  display: contents;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.card-header h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-h);
+  line-height: 1.3;
+  flex: 1;
+}
+
+.company-name {
+  font-size: 16px;
+  color: var(--text);
+  margin: 0;
+}
+
+.company-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  transition: opacity 0.2s;
+}
+
+.company-link:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+.date-applied {
+  font-size: 13px;
+  color: var(--text);
+  opacity: 0.8;
+  margin: 0;
+}
+
+.card-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 12px;
+}
+
+.card-actions button {
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.2s;
+}
+
+.btn-edit {
+  background: var(--accent-bg);
+  color: var(--accent);
+  border-color: var(--accent-border);
+}
+
+.btn-edit:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn-delete {
+  background: transparent;
+  color: #ef4444;
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.btn-delete:hover {
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.btn-save {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn-save:hover {
+  opacity: 0.9;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.btn-secondary:hover {
+  background: var(--code-bg);
+}
+
+/* Edit mode */
+.job-card.editing {
+  gap: 16px;
+}
+
+.job-card.editing .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-h);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.form-group input,
+.form-group select {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text-h);
+  font-family: var(--sans);
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: var(--accent-border);
+  box-shadow: 0 0 0 3px var(--accent-bg);
+}
+
+/* List layout */
+.job-card.list-layout {
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  flex-wrap: wrap;
+}
+
+.job-card.list-layout .card-main {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1 1 200px;
+}
+
+.job-card.list-layout .card-header {
+  flex-wrap: nowrap;
+}
+
+.job-card.list-layout .card-header h3 {
+  font-size: 16px;
+}
+
+.job-card.list-layout .company-name {
+  font-size: 14px;
+}
+
+.job-card.list-layout .company-link {
+  font-size: 13px;
+}
+
+.job-card.list-layout .date-applied {
+  font-size: 13px;
+  white-space: nowrap;
+  min-width: 130px;
+  text-align: right;
+}
+
+.job-card.list-layout .card-actions {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+@media (max-width: 640px) {
+  .job-card {
+    padding: 20px;
+  }
+
+  .card-header h3 {
+    font-size: 18px;
+  }
+
+  .job-card.editing .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .job-card.list-layout {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .job-card.list-layout .date-applied {
+    text-align: left;
+  }
+
+  .job-card.list-layout .card-actions {
+    width: 100%;
+    padding-top: 8px;
+  }
+}
